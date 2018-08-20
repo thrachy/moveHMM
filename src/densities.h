@@ -107,6 +107,31 @@ arma::colvec dexp_rcpp(NumericVector x, double rate, double foo=0)
     return res;
 }
 
+//' Pareto density function
+//'
+//' Probability density function of the Pareto distribution (written in C++)
+//'
+//' @param x Vector of quantiles
+//' @param rate Rate
+//' @param foo Unused (for compatibility with template)
+//'
+//' @return Vector of densities
+// [[Rcpp::export]]
+arma::colvec dpar_rcpp(NumericVector x, double mu, double xmin)
+{
+    arma::colvec res(x.size());
+
+    for(int i=0;i<x.size();i++) {
+        if(!arma::is_finite(x(i)))
+            res(i) = 1; // if missing observation
+        else
+            res(i) = (mu-1)/xmin*pow(x(i)/xmin,-mu));
+    }
+
+    return res;
+}
+
+
 //' Von Mises density function
 //'
 //' Probability density function of the Von Mises distribution, defined as a function

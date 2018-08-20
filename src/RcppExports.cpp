@@ -58,6 +58,19 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+// dpar_rcpp
+arma::colvec dpar_rcpp(NumericVector x, double mu, double xmin);
+RcppExport SEXP _moveHMM_dpar_rcpp(SEXP xSEXP, SEXP muSEXP, SEXP xminSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< NumericVector >::type x(xSEXP);
+    Rcpp::traits::input_parameter< double >::type mu(muSEXP);
+    Rcpp::traits::input_parameter< double >::type xmin(xminSEXP);
+    rcpp_result_gen = Rcpp::wrap(dpar_rcpp(x, mu, xmin));
+    return rcpp_result_gen;
+END_RCPP
+}
 // dvm_rcpp
 arma::colvec dvm_rcpp(NumericVector x, double mu, double kappa);
 RcppExport SEXP _moveHMM_dvm_rcpp(SEXP xSEXP, SEXP muSEXP, SEXP kappaSEXP) {

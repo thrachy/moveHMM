@@ -7,6 +7,7 @@
 
 /* .Call calls */
 extern SEXP _moveHMM_dexp_rcpp(SEXP, SEXP, SEXP);
+extern SEXP _moveHMM_dpar_rcpp(SEXP, SEXP, SEXP);
 extern SEXP _moveHMM_dgamma_rcpp(SEXP, SEXP, SEXP);
 extern SEXP _moveHMM_dlnorm_rcpp(SEXP, SEXP, SEXP);
 extern SEXP _moveHMM_dvm_rcpp(SEXP, SEXP, SEXP);
@@ -17,6 +18,7 @@ extern SEXP _moveHMM_trMatrix_rcpp(SEXP, SEXP, SEXP);
 
 static const R_CallMethodDef CallEntries[] = {
     {"_moveHMM_dexp_rcpp",       (DL_FUNC) &_moveHMM_dexp_rcpp,        3},
+    {"_moveHMM_dpar_rcpp",       (DL_FUNC) &_moveHMM_dpar_rcpp,        3},
     {"_moveHMM_dgamma_rcpp",     (DL_FUNC) &_moveHMM_dgamma_rcpp,      3},
     {"_moveHMM_dlnorm_rcpp",     (DL_FUNC) &_moveHMM_dlnorm_rcpp,      3},
     {"_moveHMM_dvm_rcpp",        (DL_FUNC) &_moveHMM_dvm_rcpp,         3},
