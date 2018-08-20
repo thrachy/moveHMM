@@ -125,7 +125,7 @@ arma::colvec dpar_rcpp(NumericVector x, double mu, double xmin)
         if(!arma::is_finite(x(i)))
             res(i) = 1; // if missing observation
         else
-            res(i) = (mu-1)/xmin*pow(x(i)/xmin,-mu));
+            res(i) = (mu-1)/xmin*pow(x(i)/xmin,-mu);
     }
 
     return res;
