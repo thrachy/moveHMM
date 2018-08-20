@@ -42,6 +42,11 @@ parDef <- function(stepDist,angleDist,nbStates,estAngleMean,zeroInflation)
                parSize[1] <- 1
                stepBounds <- matrix(rep(c(0,Inf),nbStates),ncol=2,byrow=TRUE)
                parNames <- c("rate")
+	   },
+           "pareto"={
+               parSize[1] <- 2
+               stepBounds <- matrix(rep(c(0,Inf),nbStates),ncol=2,byrow=TRUE)
+               parNames <- c("shape","scale")
            })
 
     # include zero-mass
