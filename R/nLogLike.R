@@ -50,7 +50,7 @@
 #'
 #' @export
 
-nLogLike <- function(wpar,nbStates,bounds,parSize,data,stepDist=c("gamma","weibull","lnorm","exp","pareto"),
+nLogLike <- function(wpar,nbStates,bounds,parSize,data,stepDist=c("gamma","weibull","lnorm","exp","par"),
                      angleDist=c("vm","wrpcauchy","none"),angleMean=NULL,zeroInflation=FALSE,
                      stationary=FALSE,knownStates=NULL)
 {
