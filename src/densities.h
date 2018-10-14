@@ -113,11 +113,11 @@ arma::colvec dexp_rcpp(NumericVector x, double rate, double foo=0)
 //'
 //' @param x Vector of quantiles
 //' @param mu mu
-//' @param xmin minimum value for x (for compatibility with template)
+//' @param xmin minimum value for x
 //'
 //' @return Vector of densities
 // [[Rcpp::export]]
-arma::colvec dpar_rcpp(NumericVector x, double mu, double xmin)
+arma::colvec dpareto_rcpp(NumericVector x, double mu, double xmin)
 {
     arma::colvec res(x.size());
 
