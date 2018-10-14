@@ -81,6 +81,7 @@ double nLogLike_rcpp(int nbStates, arma::mat beta, arma::mat covs, DataFrame dat
     funMap["weibull"] = dweibull_rcpp;
     funMap["lnorm"] = dlnorm_rcpp;
     funMap["exp"] = dexp_rcpp;
+    funMap["pareto"] = dpar_rcpp;
     funMap["vm"] = dvm_rcpp;
     funMap["wrpcauchy"] = dwrpcauchy_rcpp;
 

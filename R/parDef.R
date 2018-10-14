@@ -45,7 +45,8 @@ parDef <- function(stepDist,angleDist,nbStates,estAngleMean,zeroInflation)
 	   },
            "pareto"={
                parSize[1] <- 2
-               stepBounds <- matrix(rep(c(0,Inf),nbStates),ncol=2,byrow=TRUE)
+               stepBounds <- matrix(rep(c(1,Inf),nbStates),rep(c(0,Inf),nbStates)),
+	       			ncol=2,byrow=TRUE)
                parNames <- c("mu","xmin")
            })
 
