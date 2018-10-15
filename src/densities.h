@@ -137,7 +137,7 @@ arma::colvec dparetoI_rcpp(NumericVector x, double mu, double xmin)
 
     arma::colvec res = as<arma::colvec>(res_temp);
     for(int i=0;i<x.size();i++){
-	if(!arma::is_finite(x(i))
+	if(!arma::is_finite(x(i)))
 	    res(i) =1;
     }
     return res;
