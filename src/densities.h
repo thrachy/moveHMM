@@ -119,27 +119,15 @@ arma::colvec dexp_rcpp(NumericVector x, double rate, double foo=0)
 // [[Rcpp::export]]
 arma::colvec dparetoI_rcpp(NumericVector x, double mu, double xmin)
 {
-    // Obtain environment containing function
-    Rcpp::Environment package_env("package:VGAM");
+    arma::colvec res(x.size());
 
-    // Make function callable from C++
-    Rcpp::Function rfunction = package_env["dparetoI"];
-//    arma::colvec res(x.size());
-
-    Rcpp::NumericVector res_temp = rfunction(x,xmin,mu);
-    /*for(int i=0;i<x.size();i++) {
+    for(int i=0;i<x.size();i++) {
         if(!arma::is_finite(x(i)))
             res(i) = 1; // if missing observation
         else
-            //res(i) = (mu-1)/xmin*pow(x(i)/xmin,-mu);
-	    res(i) = rfunction(x(i),xmin,mu)
-    }*/
-
-    arma::colvec res = as<arma::colvec>(res_temp);
-    for(int i=0;i<x.size();i++){
-	if(!arma::is_finite(x(i)))
-	    res(i) =1;
+            res(i) = (mu-1)/xmin*pow(x(i)/xmin,-mu);
     }
+
     return res;
 }
 
