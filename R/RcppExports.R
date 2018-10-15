@@ -58,12 +58,12 @@ dexp_rcpp <- function(x, rate, foo = 0) {
 #' Probability density function of the Pareto distribution (written in C++)
 #'
 #' @param x Vector of quantiles
-#' @param mu mu
 #' @param xmin minimum step size
+#' @param mu mu
 #'
 #' @return Vector of densities
-dparetoI_rcpp <- function(x, mu, xmin = 0) {
-    .Call('_moveHMM_dparetoI_rcpp', PACKAGE = 'moveHMM', x, mu, xmin)
+dparetoI_rcpp <- function(x, xmin = 0, mu) {
+    .Call('_moveHMM_dparetoI_rcpp', PACKAGE = 'moveHMM', x, xmin, mu)
 }
 #' Von Mises density function
 #'

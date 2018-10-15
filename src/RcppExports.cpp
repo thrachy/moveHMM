@@ -59,8 +59,8 @@ BEGIN_RCPP
 END_RCPP
 }
 // dparetoI_rcpp
-arma::colvec dparetoI_rcpp(NumericVector x, double mu, double xmin);
-RcppExport SEXP _moveHMM_dparetoI_rcpp(SEXP xSEXP, SEXP muSEXP, SEXP xminSEXP) {
+arma::colvec dparetoI_rcpp(NumericVector x, double xmin, double mu);
+RcppExport SEXP _moveHMM_dparetoI_rcpp(SEXP xSEXP, SEXP xminSEXP, SEXP muSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
