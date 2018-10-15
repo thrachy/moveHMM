@@ -131,7 +131,7 @@ arma::colvec dparetoI_rcpp(NumericVector x, double mu, double xmin)
             res(i) = 1; // if missing observation
         else
             //res(i) = (mu-1)/xmin*pow(x(i)/xmin,-mu);
-	    res(i) = as<double>rfunction(x(i),xmin,mu)
+	    res(i) = rfunction(as<double>x(i),as<double>xmin,as<double>mu)
     }
 
     return res;
