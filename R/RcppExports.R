@@ -62,8 +62,8 @@ dexp_rcpp <- function(x, rate, foo = 0) {
 #' @param xmin minimum step size
 #'
 #' @return Vector of densities
-dpareto_rcpp <- function(x, mu, xmin = 0) {
-    .Call('_moveHMM_dpareto_rcpp', PACKAGE = 'moveHMM', x, mu, xmin)
+dparetoI_rcpp <- function(x, mu, xmin = 0) {
+    .Call('_moveHMM_dparetoI_rcpp', PACKAGE = 'moveHMM', x, mu, xmin)
 }
 #' Von Mises density function
 #'

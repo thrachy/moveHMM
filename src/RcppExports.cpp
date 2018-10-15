@@ -58,16 +58,16 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
-// dpareto_rcpp
-arma::colvec dpareto_rcpp(NumericVector x, double mu, double xmin);
-RcppExport SEXP _moveHMM_dpareto_rcpp(SEXP xSEXP, SEXP muSEXP, SEXP xminSEXP) {
+// dparetoI_rcpp
+arma::colvec dparetoI_rcpp(NumericVector x, double mu, double xmin);
+RcppExport SEXP _moveHMM_dparetoI_rcpp(SEXP xSEXP, SEXP muSEXP, SEXP xminSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< NumericVector >::type x(xSEXP);
     Rcpp::traits::input_parameter< double >::type mu(muSEXP);
     Rcpp::traits::input_parameter< double >::type xmin(xminSEXP);
-    rcpp_result_gen = Rcpp::wrap(dpar_rcpp(x, mu, xmin));
+    rcpp_result_gen = Rcpp::wrap(dparetoI_rcpp(x, mu, xmin));
     return rcpp_result_gen;
 END_RCPP
 }

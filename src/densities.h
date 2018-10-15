@@ -117,7 +117,7 @@ arma::colvec dexp_rcpp(NumericVector x, double rate, double foo=0)
 //'
 //' @return Vector of densities
 // [[Rcpp::export]]
-arma::colvec dpareto_rcpp(NumericVector x, double mu, double xmin)
+arma::colvec dparetoI_rcpp(NumericVector x, double mu, double xmin)
 {
     arma::colvec res(x.size());
 
@@ -125,7 +125,8 @@ arma::colvec dpareto_rcpp(NumericVector x, double mu, double xmin)
         if(!arma::is_finite(x(i)))
             res(i) = 1; // if missing observation
         else
-            res(i) = (mu-1)/xmin*pow(x(i)/xmin,-mu);
+            //res(i) = (mu-1)/xmin*pow(x(i)/xmin,-mu);
+	    res(i) = R::dparetoI(x(i),xmin,mu)
     }
 
     return res;
