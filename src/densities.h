@@ -124,7 +124,6 @@ arma::colvec dparetoI_rcpp(NumericVector x, double mu, double xmin)
 
     // Make function callable from C++
     Rcpp::Function rfunction = package_env["dparetoI"];
-    Rcpp::Environment env = Rcpp:Environment::global_env();
     arma::colvec res(x.size());
 
     for(int i=0;i<x.size();i++) {
@@ -132,7 +131,7 @@ arma::colvec dparetoI_rcpp(NumericVector x, double mu, double xmin)
             res(i) = 1; // if missing observation
         else
             //res(i) = (mu-1)/xmin*pow(x(i)/xmin,-mu);
-	    res(i) = rfunction(x(i),xmin,mu)
+	    res(i) = as<double>rfunction(x(i),xmin,mu)
     }
 
     return res;
