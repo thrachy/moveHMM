@@ -126,14 +126,14 @@ arma::colvec dparetoI_rcpp(NumericVector x, double mu, double xmin)
     Rcpp::Function rfunction = package_env["dparetoI"];
 //    arma::colvec res(x.size());
 
-    Rcpp::NumericVector res = rfunction(x,xmin,mu)
+    Rcpp::NumericVector res = rfunction(x,xmin,mu);
     /*for(int i=0;i<x.size();i++) {
         if(!arma::is_finite(x(i)))
             res(i) = 1; // if missing observation
         else
             //res(i) = (mu-1)/xmin*pow(x(i)/xmin,-mu);
-	    res(i) = rfunction(x(i),xmin,mu)*/
-    }
+	    res(i) = rfunction(x(i),xmin,mu)
+    }*/
 
     return as<arma::colvec>(res);
 }
